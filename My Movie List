@@ -1,0 +1,28 @@
+This is a sample database I created based on movies of my interest. The most interest fact about this data is that only 2 out of the 10 movies were from 2000 and beyond. 
+
+--Create a database for movies of interest
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY, name TEXT, release_year INTEGER);
+
+INSERT INTO movies VALUES (1, "Three Kings", 1999);
+INSERT INTO movies VALUES (2, "Titanic", 1997);
+INSERT INTO movies VALUES (3, "Gladiator", 1999);
+INSERT INTO movies VALUES (4, "Big Daddy", 1999);
+INSERT INTO movies VALUES (5, "The Lion King", 1994);
+INSERT INTO movies VALUES (6, "Hackers", 1995);
+INSERT INTO movies VALUES (7, "The Matrix", 1999);
+INSERT INTO movies VALUES (8, "Ace Venture: Pet Detective", 1994);
+INSERT INTO movies VALUES (9, "The Book of Eli", 2010);
+INSERT INTO movies VALUES (10, "The Men Who Stair at Goats", 2009);
+ 
+
+-- Order the movies from year of release
+
+SELECT * FROM movies ORDER BY release_year;
+
+-- How many of those movies were released from 2000 and above
+
+SELECT COUNT(release_year) 
+FROM movies
+WHERE release_year > 1999;
+
