@@ -1,1 +1,46 @@
+-- Create a store of interest with items, their price and quantiy in stock
 
+CREATE TABLE store (
+    id INTEGER PRIMARY KEY, 
+    name TEXT, 
+    price INTEGER, 
+    quantity INTEGER);
+
+INSERT INTO store (id, name, price, quantity) VALUES (1, 'Drone Model X', 500, 30);
+INSERT INTO store (id, name, price, quantity) VALUES (2, 'Drone Model Y', 700, 20);
+INSERT INTO store (id, name, price, quantity) VALUES (3, 'Drone Model Z', 900, 15);
+INSERT INTO store (id, name, price, quantity) VALUES (4, 'Drone Camera HD', 200, 50);
+INSERT INTO store (id, name, price, quantity) VALUES (5, 'Drone Camera 4K', 350, 40);
+INSERT INTO store (id, name, price, quantity) VALUES (6, 'Drone Battery', 75, 100);
+INSERT INTO store (id, name, price, quantity) VALUES (7, 'Drone Propeller Set', 30, 200);
+INSERT INTO store (id, name, price, quantity) VALUES (8, 'Drone Controller', 100, 60);
+INSERT INTO store (id, name, price, quantity) VALUES (9, 'Drone Carrying Case', 50, 80);
+INSERT INTO store (id, name, price, quantity) VALUES (10, 'Drone Landing Pad', 25, 150);
+INSERT INTO store (id, name, price, quantity) VALUES (11, 'Drone GPS Module', 120, 40);
+INSERT INTO store (id, name, price, quantity) VALUES (12, 'Drone LED Lights', 20, 250);
+INSERT INTO store (id, name, price, quantity) VALUES (13, 'Drone Signal Booster', 70, 70);
+INSERT INTO store (id, name, price, quantity) VALUES (14, 'Drone Gimbal', 250, 30);
+INSERT INTO store (id, name, price, quantity) VALUES (15, 'Drone Propeller Guards', 15, 300);
+INSERT INTO store (id, name, price, quantity) VALUES (16, 'Drone Remote Screen', 150, 50);
+INSERT INTO store (id, name, price, quantity) VALUES (17, 'Drone Repair Kit', 40, 100);
+INSERT INTO store (id, name, price, quantity) VALUES (18, 'Drone Charger', 50, 100);
+INSERT INTO store (id, name, price, quantity) VALUES (19, 'Drone Range Extender', 80, 60);
+INSERT INTO store (id, name, price, quantity) VALUES (20, 'Drone Obstacle Sensors', 90, 50);
+INSERT INTO store (id, name, price, quantity) VALUES (21, 'Drone Flight Simulator Software', 30, 100);
+INSERT INTO store (id, name, price, quantity) VALUES (22, 'Drone Backpack', 60, 80);
+INSERT INTO store (id, name, price, quantity) VALUES (23, 'Drone Night Vision Camera', 400, 20);
+INSERT INTO store (id, name, price, quantity) VALUES (24, 'Drone Water Landing Gear', 45, 70);
+INSERT INTO store (id, name, price, quantity) VALUES (25, 'Drone Controller Gloves', 25, 120);
+INSERT INTO store (id, name, price, quantity) VALUES (26, 'Drone Wind Gauge', 20, 150);
+
+-- Order all items by price in ascending order
+
+SELECT * FROM store ORDER BY price asc;
+
+-- Find out how much the total value of all inventory in stock
+
+SELECT SUM(price * quantity) FROM store;
+
+-- Find out the value of stock for each item and list the value of the items in descending order
+
+SELECT name, price * quantity AS Total_value From store ORDER BY total_value DESC;
