@@ -35,9 +35,9 @@ INSERT INTO store (id, name, price, quantity) VALUES (26, 'Drone Wind Gauge', 20
 
 -- Order all items by price in ascending order
 
-SELECT * FROM store ORDER BY price asc;
+SELECT * FROM store ORDER BY price ASC;
 
--- Find out how much the total value of all inventory in stock
+-- Find out the total value of all inventory in stock
 
 SELECT SUM(price * quantity) FROM store;
 
