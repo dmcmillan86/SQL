@@ -67,7 +67,7 @@ WHERE average_popularity>=90;
 
 -- Total Tracks and their percentage of total tracks
 
-WITH CTE AS (SELECT tracks.GenreId AS GenreId, genres.Name AS Genre, count(tracks.name) AS total_tracks
+WITH CTE AS (SELECT tracks.GenreId AS GenreId, genres.Name AS Genre, CAST(count(tracks.name)AS REAL) AS total_tracks
 FROM tracks
 JOIN genres
 ON tracks.GenreId = genres.GenreId
@@ -75,5 +75,5 @@ Group BY tracks.GenreId
 ORDER BY total_tracks DESC
 )
 
-SELECT GenreId, Genre, total_tracks, (total_tracks * 100 / SUM(total_tracks) OVER()) AS Percentage
+SELECT GenreId, Genre, total_tracks, ROUND((total_tracks * 100 / SUM(total_tracks) OVER()), 2) AS Percentage
 FROM CTE;
