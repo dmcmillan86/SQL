@@ -64,3 +64,16 @@ GROUP BY s.artist_name
 SELECT  artist_name, average_popularity, 'Top Star' AS tag
 FROM popularity_average_CTE
 WHERE average_popularity>=90;
+
+-- Total Tracks and their percentage of total tracks
+
+WITH CTE AS (SELECT tracks.GenreId AS GenreId, genres.Name AS Genre, count(tracks.name) AS total_tracks
+FROM tracks
+JOIN genres
+ON tracks.GenreId = genres.GenreId
+Group BY tracks.GenreId
+ORDER BY total_tracks DESC
+)
+
+SELECT GenreId, Genre, total_tracks, (total_tracks * 100 / SUM(total_tracks) OVER()) AS Percentage
+FROM CTE;
