@@ -4,7 +4,7 @@
 
 # SQL Portfolio
 
-Welcome to my SQL Portfolio! As a data analyst with a specialization in telecommunications, I've leveraged SQL extensively to turn raw data into actionable insights. This portfolio showcases the variety of projects I've undertaken to solve real-world problems, utilizing my SQL skills in data extraction, manipulation, and analysis.
+Welcome to my SQL Portfolio! As a data analyst with a specialization in telecommunications, I've leveraged SQL extensively to turn raw data into actionable insights. This portfolio showcases the variety of projects I've worked on utilizing my SQL skills in data extraction, manipulation, and analysis.
 
 ## Key Skills Demonstrated
 
