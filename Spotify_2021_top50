@@ -77,3 +77,14 @@ ORDER BY total_tracks DESC
 
 SELECT GenreId, Genre, total_tracks, ROUND((total_tracks * 100 / SUM(total_tracks) OVER()), 2) AS Percentage
 FROM CTE;
+
+-- What is the Average danceability for the top 10 songs with the highest danceability?
+
+WITH CTE AS (SELECT *
+FROM Spotifydata
+ORDER by danceability DESC
+LIMIT 10)
+
+SELECT AVG (danceability)
+FROM CTE;
+
